@@ -7,7 +7,7 @@ include:
 {{ m[1].mountpoint }}:
   mount.mounted:
     - device: {{ m[1].location }}
-    - fstype: nfs
+    - fstype: nfs{{ '4' if m[1].get('v4', nfs.v4) else '' }}
 {# Not every platform needs options #}
 {% if 'opts' in m[1] or nfs.mount_opts %}
     - opts: {{ m[1].opts|default(nfs.mount_opts) }}
