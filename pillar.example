@@ -6,6 +6,7 @@ nfs:
   persist_unmount: true
   persist_mount: false
   enabled: true
+  v4: false
 
   # Server settings
   server:
@@ -31,6 +32,7 @@ nfs:
       opts: "vers=3,rsize=65535,wsize=65535"
       persist: true
       mkmnt: true
+      v4: false
   unmount:
     someothername:
       mountpoint: "/some/other/path"
